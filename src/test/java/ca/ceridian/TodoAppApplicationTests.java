@@ -44,7 +44,7 @@ class TodoAppApplicationTests {
 	         
 	        TodoTask task = new TodoTask();
 	        task.setTask("Mock Task");
-	        String s = addTodoEndpoint.saveTodoTask(task);
+	        String s = addTodoEndpoint.addTodoTask(task);
 	        
 	        assertEquals("redirect:/", s);
 	     }

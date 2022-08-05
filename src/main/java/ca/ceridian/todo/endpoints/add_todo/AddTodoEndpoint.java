@@ -16,7 +16,7 @@ public class AddTodoEndpoint {
 
 	
 	@PostMapping("todos/add")
-	public String saveTodoTask(@ModelAttribute TodoTask todo) {
+	public String addTodoTask(@ModelAttribute TodoTask todo) {
 		repository.save(todo);
 		return "redirect:/";
 	}

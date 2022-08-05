@@ -10,7 +10,7 @@ import ca.ceridian.domain.TodoTask;
 public class AddTodoHandler {
 	
 	@GetMapping("/addTodoForm")
-	public ModelAndView addEmployeeForm() {
+	public ModelAndView addTodoForm() {
 		ModelAndView mav = new ModelAndView("add-todo-form");
 		TodoTask todo = new TodoTask();
 		mav.addObject("todo", todo);
