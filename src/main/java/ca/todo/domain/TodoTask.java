@@ -1,4 +1,4 @@
-package ca.ceridian.domain;
+package ca.todo.domain;
 
 import java.util.UUID;
 

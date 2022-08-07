@@ -1,0 +1,29 @@
+spring:
+  datasource:    
+    url: jdbc:mysql://localhost:3306/todo?createDatabaseIfNotExist=true&autoReconnect=true&autoReconnectForPools=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: "root"
+    password: "root"
+    initialization-mode: always
+    continue-on-error: true    
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      cache:
+        use_query_cache: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+        jdbc:
+          batch_size: 5
+          time_zone: UTC
+        order_inserts: true
+    show-sql: false
+
+management:
+  endpoint:
+    health:
+      show-details: always
+

@@ -1,4 +1,4 @@
-package ca.ceridian.validation;
+package ca.todo.validation;
 
 public interface ValidationType {
     String UNSPECIFIED = "Unspecified";
