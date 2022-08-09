@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import ca.todo.domain.TodoTask;
 import ca.todo.service.TodoCommandService;
 
 @RestController
@@ -17,7 +16,7 @@ public class AddTodoEndpoint {
 
 	
 	@PostMapping(path = "todos/add", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void addTodoTask(@RequestBody TodoTask todo) {
+	public void addTodoTask(@RequestBody AddTodoRequest todo) {
 		commandService.createTodo(todo);
 	}
 }

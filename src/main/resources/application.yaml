@@ -1,17 +1,36 @@
 spring:
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.UUIDSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      bootstrap-servers:
+      - localhost:9091
+      - localhost:9092
+      - localhost:9093
+    consumer:
+      group-id: mygroup
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.UUIDDeserializer
+      value-deserializer:  org.apache.kafka.common.serialization.StringDeserializer
+      bootstrap-servers:
+      - localhost:9091
+      - localhost:9092
+      - localhost:9093
+      
+
+
   datasource:    
     url: jdbc:mysql://localhost:3306/todo?createDatabaseIfNotExist=true&autoReconnect=true&autoReconnectForPools=true&useSSL=false&allowPublicKeyRetrieval=true
     username: "root"
     password: "root"
     initialization-mode: always
-    continue-on-error: true    
+    continue-on-error: true
+    driver-class-name: com.mysql.cj.jdbc.Driver  
   jpa:
     generate-ddl: true
     hibernate:
       ddl-auto: update
       naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
-      cache:
-        use_query_cache: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
@@ -20,8 +39,8 @@ spring:
           batch_size: 5
           time_zone: UTC
         order_inserts: true
-    show-sql: false
-
+    show-sql: false
+        
 management:
   endpoint:
     health:
